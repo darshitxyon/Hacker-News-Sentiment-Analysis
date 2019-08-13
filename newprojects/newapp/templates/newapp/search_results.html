@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for news in object_list %}
+    <li>
+      {{ news.title }}, {{ news.polarity }}
+    </li>
+  {% endfor %}
+</ul>

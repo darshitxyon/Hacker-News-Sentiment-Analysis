@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h2>News</h2>
+
+    <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+    </form>
+  <div class="container">
+      {% for stor in result  %}
+        {% for key,story in result1.items  %}
+              <h1><a href={{story.url}}>{{story.title}}</a></h1>
+              {{ value|linebreaks }}
+              <h4>description:</h4><p>{{ story.by }}</p>
+              {{ value|linebreaks }}
+              <h4>points:</h4>{{ story.score }}
+              {{ value|linebreaks }}
+              <h4>comments:</h4>{{ story.descendants}}
+              {{ value|linebreaks }}
+              <h5> Polarity(Sentiment): </h5>{{story.polarity}}
+              {{ value|linebreaks }}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+{% endblock %}
